@@ -1,6 +1,11 @@
-# SARS - Smart Ambulance Routing System
+# SARS (Smart Ambulance Routing System) - Phase 1
 
-Complete emergency ambulance dispatch system with AI-powered transcription, route optimization, and WhatsApp notifications. **Phase 1 - Core Implementation**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![React 18+](https://img.shields.io/badge/react-18+-blue.svg)](https://react.dev)
+[![FastAPI](https://img.shields.io/badge/FastAPI-modern%20python%20web-green)](https://fastapi.tiangolo.com)
+
+> **Smart Ambulance Routing System** - An intelligent emergency dispatch system with AI-powered call transcription, real-time route optimization, and WhatsApp notifications.
 
 ## 🏗️ Project Structure
 
