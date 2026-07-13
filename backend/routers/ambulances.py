@@ -17,7 +17,7 @@ mock_ambulances = [
         },
         "driver": {
             "name": "Amit Sharma",
-            "phone": "+917483588380"  # Keep same for demo
+            "phone": "+918630446901"  # Keep same for demo
         },
         "equipment": ["Defibrillator", "Oxygen", "Stretcher"]
     },
@@ -49,7 +49,7 @@ mock_ambulances = [
         },
         "driver": {
             "name": "Rahul Singh",
-            "phone": "+917483588380"  # Keep same for demo
+            "phone": "+918630446901"  # Keep same for demo
         },
         "equipment": ["Defibrillator", "Oxygen", "Ventilator", "Stretcher"]
     },
@@ -81,7 +81,7 @@ mock_ambulances = [
         },
         "driver": {
             "name": "Vikram Patel",
-            "phone": "+917483588380"  # Keep same for demo
+            "phone": "+918630446901"  # Keep same for demo
         },
         "equipment": ["Defibrillator", "Oxygen", "ECG Monitor", "Stretcher"]
     }
