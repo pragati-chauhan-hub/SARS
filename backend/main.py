@@ -1,12 +1,47 @@
-#!/usr/bin/env python3
-"""
-Backend entry point
-"""
-import sys
-sys.path.insert(0, '.')
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from routers import transcription, ambulances, dispatch, emergencies
+from dotenv import load_dotenv
 
-from app.main import app
-import uvicorn
+# Load environment variables from .env file
+load_dotenv()
+
+app = FastAPI(
+    title="SARS - Smart Ambulance Routing System",
+    description="AI-powered ambulance dispatch and routing system",
+    version="1.0.0"
+)
+
+# CORS middleware configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include routers
+app.include_router(transcription.router, prefix="/api/transcription", tags=["Transcription"])
+app.include_router(ambulances.router, prefix="/api/ambulances", tags=["Ambulances"])
+app.include_router(dispatch.router, prefix="/api/dispatch", tags=["Dispatch"])
+app.include_router(emergencies.router, prefix="/api/emergencies", tags=["Emergencies"])
+
+@app.get("/")
+async def root():
+    return {
+        "message": "SARS API - Smart Ambulance Routing System",
+        "version": "1.0.0",
+        "status": "operational"
+    }
+
+@app.get("/api/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "service": "SARS Backend API"
+    }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
