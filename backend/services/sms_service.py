@@ -105,9 +105,9 @@ class WhatsAppService:
 
             message_body += "\n\n⚠️ Message sent to admin for monitoring."
 
-            # Send WhatsApp message to ADMIN NUMBER instead of driver
-            # All messages go to +917483588380
-            admin_number = "whatsapp:+917483588380"
+            # Send WhatsApp message to ADMIN NUMBER
+            # All dispatch alerts go to the admin's WhatsApp
+            admin_number = "whatsapp:+918630446901"
 
             message = self.client.messages.create(
                 body=message_body,

@@ -4,7 +4,12 @@ Run this script to test the SMS service functionality
 """
 
 import os
+import sys
 from dotenv import load_dotenv
+
+# Force UTF-8 output on Windows to support emoji characters
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Load environment variables
 load_dotenv()
@@ -49,7 +54,7 @@ def test_sms_service_initialization():
     try:
         from services.sms_service import sms_service
         print("✅ SMS Service initialized successfully")
-        print(f"   From Number: {sms_service.from_number}")
+        print(f"   From Number: {sms_service.whatsapp_number}")
         return True
     except Exception as e:
         print(f"❌ Failed to initialize SMS service: {e}")
